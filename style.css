@@ -1,5 +1,8 @@
-body {
+body, .containers, .project-cards, .ann-trend {
     display: grid;
+}
+
+body {
     grid-template: 20% 80% / 20% 80%;
     grid-template-areas: 
     "sidebar header"
@@ -10,20 +13,52 @@ body {
     width: 100vw;
 }
 
-.sidebar {
-    grid-area: sidebar;
-
-    border: 1px solid green;
-}
-
-.header {
+#header {
     grid-area: header;
-
-    border: 1px solid purple;
+    grid-template: 1fr 1fr / 2fr 1fr;
 }
 
-.content {
-    grid-area: content;
+#header, .search-bar, .user, .welcome, .links {
+    border: 2px solid purple;
+}
 
-    border: 1px solid orange;
+#sidebar {
+    grid-template-rows: 1fr 4fr 4fr;
+    grid-area: sidebar;
+}
+
+#sidebar, .page-title, .user-settings, .user-help {
+    border: 2px solid green;
+}
+
+#content {
+    grid-area: content;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 0.8fr;
+    grid-template-areas: 
+    "project-cards project-cards ann-trend"
+    "project-cards project-cards ann-trend"
+    "project-cards project-cards ann-trend";
+}
+/* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+
+.project-cards {
+    display: grid;
+    grid-area: project-cards;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    overflow: auto;
+}
+
+.ann-trend {
+    grid-area: ann-trend;
+    grid-template-rows: 1fr 1fr;
+}
+
+#content, .project-cards, .ann-trend, .card {
+    border: 3px solid orange;
+}
+
+.card-one {
+    width: 200px;
+    height: auto;
 }
