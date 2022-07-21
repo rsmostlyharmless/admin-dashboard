@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-body, .containers, .project-cards, .ann-trend {
+body, .containers, .project-cards, .ann-trend, .welcome {
     display: grid;
 }
 
 body {
-    grid-template: 20% 80% / 20% 80%;
+    grid-template: 1fr 4fr / 1fr 4fr;
     grid-template-areas: 
     "sidebar header"
     "sidebar content";
@@ -15,19 +15,24 @@ body {
     width: 100vw;
 }
 
+.text {
+    font-family: 'Montserrat', sans-serif;
+}
+
 /* Header start */
 
 #header {
+    background-color: whitesmoke;
     grid-area: header;
     grid-template: 1fr 1fr / 2fr 1fr;
-    background-color: whitesmoke;
+    box-shadow: 5px 2px 10px 3px grey;
 }
-
-#header, .search-bar, .user, .welcome, .links {
+/* border to help visualise grid */
+/* #header, .search-bar, .user, .welcome, .links {
     border: 2px solid purple;
-}
+} */
 
-.search-bar, .user, .welcome, .links {
+.search-bar, .user, .links {
     display: flex;
 }
 
@@ -51,7 +56,7 @@ body {
 input {
     border-radius: 10px;
     height: 25px;
-    width: 400px;
+    width: 60%;
 }
 
 .user {
@@ -71,9 +76,33 @@ input {
 }
 
 .dd {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 700;
+}
+
+.welcome {
+    align-items: center;
+    font-weight: 700;
+    grid-template: 1fr 1fr / 0.15fr 1fr;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.octo-two {
+    grid-area: 1 / 1 / 3 / 2;
+}
+
+.welcome > p {
+    grid-area: 1 / 2 / 2 / 3;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.welcome > h3 {
+    font-size: 28px;
+    grid-area: 2 / 2 / 3 / 3;
+    margin: 0;
+    padding-bottom: 10px;
 }
 
 .octo-two {
@@ -91,7 +120,6 @@ input {
 .links > button {
     background-color: rgb(191, 217, 226);
     border-radius: 20px;
-    font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     font-weight: 500;
     height: 50px;
@@ -105,7 +133,7 @@ input {
 /* Side Bar Start */
 
 #sidebar {
-    grid-template-rows: 1fr 4fr 4fr;
+    grid-template-rows: 0.97fr 4fr 4fr;
     grid-area: sidebar;
 }
 
