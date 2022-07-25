@@ -294,6 +294,19 @@ span{
     margin-top: 0;
 }
 
+.other-img {
+    border-radius: 100%;
+    height: 50px;
+    margin-top: 15px;
+    width: 50px;
+}
+
+.other-txt {
+    align-items: center;
+    font-size: 11px;
+    margin-top: 0px;
+}
+
 
 
 /* border to help visualise grid */
