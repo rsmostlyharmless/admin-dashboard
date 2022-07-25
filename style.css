@@ -182,22 +182,18 @@ h2 {
 /* main content start */
 #content {
     display: flex;
-    flex: 1;
-    /* gap: 30px; */
     grid-area: content;
     grid-template: 1fr 1fr 1fr / 1fr 1fr 0.62fr;
     grid-template-areas:
     "stuff-cards stuff-cards more-other"
     "stuff-cards stuff-cards more-other"
     "stuff-cards stuff-cards more-other";
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .stuff-cards {
     grid-area: stuff-cards;
-    justify-items: center;
-    /* padding: 5px 30px 5px 30px; */
-    
+    padding: 5px 10px 5px 30px;
 }
 
 .card {
@@ -235,13 +231,17 @@ h2 {
     grid-area: 4 / 2 / 5 / 3;
 }
 
+.stuff-h4 {
+    margin-bottom: 2px;
+}
+
 .card-one {
     align-items: center;
     grid-template-rows: 1fr 1fr;
     height: 210px;
     justify-items: end;
-    padding: 0px 15px 0px 15px;
-    margin: 8px 15px 8px 15px;
+    padding: 0px 50px 0px 50px;
+    margin: 0px 15px 8px 15px;
     width: 380px;
 }
 
@@ -264,7 +264,14 @@ span{
 .more-other {
     grid-area: more-other;
     padding: 10px;
-    position: relative;
+}
+
+.more-card > .stuff-h4 {
+    padding-bottom: 7px;
+}
+
+.other-card > .stuff-h4 {
+    padding-bottom: 7px;
 }
 
 .card-two {
@@ -273,12 +280,7 @@ span{
     width: 250px;
 }
 
-.card-two > div {
-    border-bottom: 1px solid gray;
-    
-}
-
-.card-two > div > div {
+.border {
     border-bottom: 1px solid gray;
 }
 
